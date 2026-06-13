@@ -7,8 +7,22 @@ Powered by Azure OpenAI + LangChain + FAISS + Gradio
 
 import os
 import shutil
-import gradio as gr
 from dotenv import load_dotenv
+
+# Monkeypatch gradio_client schema parsing to prevent Pydantic v2 "TypeError: argument of type 'bool' is not iterable"
+try:
+    import gradio_client.utils as client_utils
+    original_json_schema_to_python_type = client_utils._json_schema_to_python_type
+    def safe_json_schema_to_python_type(schema, defs=None):
+        if isinstance(schema, bool):
+            return "any" if schema else "None"
+        return original_json_schema_to_python_type(schema, defs)
+    client_utils._json_schema_to_python_type = safe_json_schema_to_python_type
+    print("[INFO] Successfully applied Gradio API schema parser monkeypatch.")
+except Exception as e:
+    print(f"[WARN] Failed to apply Gradio API schema patch: {e}")
+
+import gradio as gr
 
 from utils.loader import ingest_files
 from utils.vectorstore import build_vectorstore, load_vectorstore, vectorstore_exists
