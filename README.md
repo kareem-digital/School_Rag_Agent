@@ -1,3 +1,14 @@
+---
+title: School Rag Agent
+emoji: 🏫
+colorFrom: blue
+colorTo: indigo
+sdk: gradio
+sdk_version: 4.44.0
+app_file: app.py
+pinned: false
+---
+
 # 🏫 School Data Chat Agent
 
 A conversational AI agent that lets you talk to your school Excel and PDF files in plain English — powered by **Azure OpenAI**, **LangChain**, **FAISS**, and **Gradio**.
