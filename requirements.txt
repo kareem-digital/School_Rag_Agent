@@ -1,0 +1,13 @@
+gradio
+langchain
+langchain-core
+langchain-openai
+langchain-community
+langchain-text-splitters
+faiss-cpu
+pypdf
+pdfplumber
+pandas
+openpyxl
+python-dotenv
+tiktoken

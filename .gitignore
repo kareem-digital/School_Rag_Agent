@@ -1,0 +1,25 @@
+# Python virtual environment
+venv/
+.venv/
+env/
+ENV/
+
+# Byte-compiled / optimized / DLL archive
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Environment variables / Credentials
+.env
+
+# Local user upload data (preserve structure, ignore files)
+data/*
+!data/.gitkeep
+
+# Vector store database
+vectorstore/index/
+
+# IDE configurations
+.vscode/
+.idea/
+.DS_Store
