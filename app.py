@@ -216,6 +216,7 @@ with gr.Blocks(title="School Data Chat Agent", theme=gr.themes.Soft(primary_hue=
                 label="",
                 height=480,
                 show_label=False,
+                type="messages",
             )
 
             with gr.Row():
