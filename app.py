@@ -155,7 +155,7 @@ CSS = """
 #status_box { min-height: 80px; }
 """
 
-with gr.Blocks(title="School Data Chat Agent") as demo:
+with gr.Blocks(title="School Data Chat Agent", theme=gr.themes.Soft(primary_hue="blue")) as demo:
 
     gr.Markdown("# 🏫 School Data Chat Agent", elem_id="title")
     gr.Markdown(
@@ -230,6 +230,5 @@ if __name__ == "__main__":
         server_name="0.0.0.0",
         server_port=7860,
         share=False,
-        theme=gr.themes.Soft(primary_hue="blue"),
         css=CSS,
     )
